@@ -11,11 +11,18 @@ class HomeController extends Controller
 	}
 	function contact(){
 		$name = 'Md Masum Mina';
-		$namef = [
-			'age' => 44, 
-			'nameis' => 'fffff'
-		];
-		return view('custom.test', ['name'=>$name], $namef);
+		$nameg = ['name'=>$name]; // 
+
+		// data is public variable which call in Controller
+		$this->data['fnaem'] = 'Tazim Uddin Mina';
+		$this->data['mname'] = 'Rina Begum';
+		$this->data['age'] = 34;
+
+
+		// array pass By controller
+		$this->data['classone'] = ['Bangla', 'English', 43, 'Math'];
+
+		return view('custom.test', $nameg, $this->data);
 	}
 }
 
