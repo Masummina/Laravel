@@ -16,21 +16,11 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+// Get value by get Method
+Route::get('create_user', 'UserController@create');
+Route::get('usertest', 'UserController@store');
+Route::post('useradd', 'UserController@store2');
+Route::put('putmethod', 'UserController@putmet');
+Route::patch('patmet', 'UserController@patchmet');
+Route::delete('delmethode', 'UserController@delmeth');
 
-Route::get('about', 'HomeController@index');
-Route::get('contact', 'HomeController@contact');
-Route::get('newtest', 'IndexController@newcontroller');
-// custom controller
-Route::get('create', 'UserController@creates');
-Route::get('index', 'UserController@usersall');
-Route::get('user/{id}', 'UserController@show');
-Route::get('userdel/{id}', 'UserController@deleted');
-Route::get('user/{id}/edit', 'UserController@edit');
-
-Route::get('test', function(){
-	return "I am form Test route";
-});
-
-// Route::get('about', function(){
-// 	return "This is about module";
-// });

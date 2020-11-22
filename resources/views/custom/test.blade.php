@@ -6,16 +6,14 @@
 <body>
 	<?php 
 
-	echo "Hello, I am form view";
-	echo "<br>";
-	echo $name;
-	echo "<br>";
-	// var_dump($classone);
-	echo "<br>";
-	echo 'Subject is:<br>';
-	echo $classone['0'];
-	echo "<br>";
-	echo $classone['2'];
-	 ?>
+	echo "Hello, I am form view";	 ?>
+		<form method="post" action="delmethode">
+		@csrf
+		@method('delete')
+			<input type="text" name="name">
+			<input type="submit">
+		
+		</form>
+
 </body>
 </html>

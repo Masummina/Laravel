@@ -7,57 +7,27 @@ use App\User;
 
 class UserController extends Controller
 {
-    // All user Show
-        public function usersall(){
-	        $users = User::all();
-	        return $users;
-        }
-        
-    // Parameter Pass and fixed data show
-
-    public function show($id){
-        $user = User::find($id);
-        return $user;
+   
+    public function create(){
+        return "This is post method";
     }
 
-    // User delete function
+    public function store(){
+        return view('custom/test');
+    }
+    public function store2(){
+        echo "This method form POST";
+    }
+    public function putmet(){
+        return "This method form PUT";
+    }
 
-    public function deleted($id){
-        $userdel = User::findOrFail($id);
-        $userdel->delete();
-        return 'User deleted Successfully';
+    public function delmeth(){
+        return "This method form Delete method";
     }
 
 
-    // User Edit function
 
-    public function edit($id){
-        $useredit = User::findOrFail($id);
-        $useredit->name = "Rony";
-        $useredit->save();
-        return 'User Edit Successfully';
-    }
-
-	public function creates(){
-		$data = [
-			'name'     => "Aktaruzzaman Hasan",
-			'email'    => 'aktar@gmail.com',
-			'password' => '123456789'
-
-		];
-		User::create($data);
-
-			$data = [
-			'name'     => "Raqufffibul Hasan",
-			'email'    => 'raquyfibul@gmail.com',
-			'password' => '123456789'
-
-		];
-		User::create($data);
-
-		return 'user Created Successfully';
-    }
-    
 
 
 
