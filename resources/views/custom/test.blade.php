@@ -7,13 +7,14 @@
 	<?php 
 
 	echo "Hello, I am form view";	 ?>
-		<form method="post" action="delmethode">
+		<form method="post" action="user-met">
 		@csrf
 		@method('delete')
 			<input type="text" name="name">
 			<input type="submit">
 		
 		</form>
+		<a href="{{route('user_list')}"></a>
 
 </body>
 </html>

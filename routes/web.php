@@ -16,11 +16,32 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+// prefix route
+
+Route::prefix('admin')->group(function(){
+    Route::get('hello', function(){
+        return "I am from Hello route";
+    });
+});
+
+
+Route::get('world', function(){
+    return "I am from world route";
+});
+
+
 // Get value by get Method
 Route::get('create_user', 'UserController@create');
-Route::get('usertest', 'UserController@store');
-Route::post('useradd', 'UserController@store2');
-Route::put('putmethod', 'UserController@putmet');
-Route::patch('patmet', 'UserController@patchmet');
-Route::delete('delmethode', 'UserController@delmeth');
+
+Route::get('user', 'UserController@store')->name('user_list');
+Route::post('user', 'UserController@store2');
+
+Route::put('user', 'UserController@putmet');
+Route::patch('user', 'UserController@patchmet');
+Route::delete('user', 'UserController@delmeth');
+
+Route::any('/user-met', function(){
+    return "This function form any";
+});
 
